@@ -17,7 +17,7 @@ import React from 'react'
 //   )
 // }
 function ContactCard(props) {
-    const {  name, email, imageUrl } = props.contacts;
+    const { id, name, email, imageUrl } = props.contacts;
 
     return (
         <div className='item' style={{ display: 'flex', alignItems: 'center', marginBottom: '10px' }}>
@@ -27,6 +27,7 @@ function ContactCard(props) {
                 <div>{email}</div>
             </div>
             <i className="trash alternate outline icon"
+                onClick={() => props.clickHandler(id)}
                 style={{ color: "red", marginLeft: 'auto', cursor: 'pointer' }}
             ></i>
         </div>
